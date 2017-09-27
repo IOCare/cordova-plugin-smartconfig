@@ -1,6 +1,8 @@
 # cordova-plugin-smartconfig
+
 A cordova plugin for Expressif Esptouch protocol which is used to smartconfig esp8266 & ESP32
 # Install
+
 cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
 
 # Usage
@@ -38,4 +40,4 @@ You must call "espSmartconfig.stopConfig" when you want to stop the config,if no
 "esptouchPlugin.smartConfig" the other time.
 
 
-iOS emulator does not support the SmartConfig feature
+iOS emulator does not support the SmartConfig feature.

@@ -108,6 +108,4 @@ public class espSmartconfig extends CordovaPlugin {
             //receivingCallbackContext.sendPluginResult(pluginResult);    //modified by lianghuiyuan
         }
     };
-
-
 }
