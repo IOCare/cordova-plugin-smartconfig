@@ -35,7 +35,26 @@ cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
 		console.log(error);
 	});
 ```
+3. espSmartconfig.getScanResults([options], listHandler, fail);
 
+Retrieves a list of the available networks as an array of objects and passes them to the function listHandler. The format of the array is:
+
+```
+networks = [
+    {   "level": signal_level, // raw RSSI value
+        "SSID": ssid, // SSID as string, with escaped double quotes: "\"ssid name\""
+        "BSSID": bssid // MAC address of WiFi router as string
+        "frequency": frequency of the access point channel in MHz
+        "capabilities": capabilities // Describes the authentication, key management, and encryption schemes supported by the access point.
+    }
+]
+```
+
+An options object may be passed. Currently, the only supported option is numLevels, and it has the following behavior:
+
+if (n == true || n < 2), *.getScanResults({numLevels: n}) will return data as before, split in 5 levels;
+if (n > 1), *.getScanResults({numLevels: n}) will calculate the signal level, split in n levels;
+if (n == false), *.getScanResults({numLevels: n}) will use the raw signal level;
 #Warning 
 
 You must call "espSmartconfig.stopConfig" when you want to stop the config,if not it will make some mistake when you call
