@@ -56,7 +56,12 @@ Example usage:
 
 
 	$scope.listHandler = function(ssids) {
-		console.log(ssids);
+		console.log(ssids.SSID);
+		console.log(ssids.BSSID);
+	};
+
+	$scope.fail = function(e) {
+		console.log(e);
 	};
 
 
