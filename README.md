@@ -35,7 +35,7 @@ cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
 		console.log(error);
 	});
 ```
-3. espSmartconfig.getScanResults([options], listHandler, fail);
+3. espSmartconfig.getNetworklist([options], listHandler, fail);
 
 Retrieves a list of the available networks as an array of objects and passes them to the function listHandler. The format of the array is:
 
@@ -49,12 +49,24 @@ networks = [
     }
 ]
 ```
+Example usage:
 
+```
+	espSmartconfig.getNetworklist({numLevels: false}, $scope.listHandler, $scope.fail);
+
+
+	$scope.listHandler = function(ssids) {
+		console.log(ssids);
+	};
+
+
+```
 An options object may be passed. Currently, the only supported option is numLevels, and it has the following behavior:
 
-if (n == true || n < 2), *.getScanResults({numLevels: n}) will return data as before, split in 5 levels;
-if (n > 1), *.getScanResults({numLevels: n}) will calculate the signal level, split in n levels;
-if (n == false), *.getScanResults({numLevels: n}) will use the raw signal level;
+if (n == true || n < 2), *.getNetworklist({numLevels: n}) will return data as before, split in 5 levels;
+if (n > 1), *.getNetworklist({numLevels: n}) will calculate the signal level, split in n levels;
+if (n == false), *.getNetworklist({numLevels: n}) will use the raw signal level;
+
 #Warning 
 
 You must call "espSmartconfig.stopConfig" when you want to stop the config,if not it will make some mistake when you call
