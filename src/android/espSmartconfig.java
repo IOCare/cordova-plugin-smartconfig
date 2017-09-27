@@ -11,9 +11,20 @@ import com.espressif.iot.esptouch.IEsptouchResult;
 import com.espressif.iot.esptouch.IEsptouchTask;
 import com.espressif.iot.esptouch.task.__IEsptouchTask;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
+//import org.apache.cordova.CallbackContext;
+//import org.apache.cordova.CordovaPlugin;
+//import org.apache.cordova.PluginResult;
+import org.apache.cordova.*;
+
+import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiEnterpriseConfig;
+import android.net.wifi.ScanResult;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.SupplicantState;
+import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,8 +34,16 @@ import java.util.ArrayList;
 
 public class espSmartconfig extends CordovaPlugin {
 	
+	private WifiManager wifiManager;
 	CallbackContext receivingCallbackContext = null;
 	IEsptouchTask mEsptouchTask;
+
+    @Override
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        this.wifiManager = (WifiManager) cordova.getActivity().getSystemService(Context.WIFI_SERVICE);
+    }
+
 	@Override
     public boolean execute(String action, final JSONArray args,final CallbackContext callbackContext) throws JSONException{
         receivingCallbackContext = callbackContext;    //modified by lianghuiyuan
@@ -92,10 +111,109 @@ public class espSmartconfig extends CordovaPlugin {
             receivingCallbackContext.sendPluginResult(result);
             return true;
         }
+        else if (action.equals("getNetworklist")) {
+			return this.getScanResults(callbackContext, args);
+        }
         else{
             callbackContext.error("can not find the function "+action);
             return false;
         }
+    }
+
+
+    /** Code cobtained from WiFiWizard by hoerresb
+       *    This method uses the callbackContext.success method to send a JSONArray
+       *    of the scanned networks.
+       *
+       *    @param    callbackContext        A Cordova callback context
+       *    @param    data                   JSONArray with [0] == JSONObject
+       *    @return    true
+       */
+    private boolean getNetworklist(CallbackContext callbackContext, JSONArray data) {
+        List<ScanResult> scanResults = wifiManager.getScanResults();
+
+        JSONArray returnList = new JSONArray();
+
+        Integer numLevels = null;
+
+        if(!validateData(data)) {
+            callbackContext.error("espSmartconfig: disconnectNetwork invalid data");
+            Log.d(TAG, "espSmartconfig: disconnectNetwork invalid data");
+            return false;
+        }else if (!data.isNull(0)) {
+            try {
+                JSONObject options = data.getJSONObject(0);
+
+                if (options.has("numLevels")) {
+                    Integer levels = options.optInt("numLevels");
+
+                    if (levels > 0) {
+                        numLevels = levels;
+                    } else if (options.optBoolean("numLevels", false)) {
+                        // use previous default for {numLevels: true}
+                        numLevels = 5;
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+                callbackContext.error(e.toString());
+                return false;
+            }
+        }
+
+        for (ScanResult scan : scanResults) {
+            /*
+             * @todo - breaking change, remove this notice when tidying new release and explain changes, e.g.:
+             *   0.y.z includes a breaking change to espSmartconfig.getNetworklist().
+             *   Earlier versions set scans' level attributes to a number derived from wifiManager.calculateSignalLevel.
+             *   This update returns scans' raw RSSI value as the level, per Android spec / APIs.
+             *   If your application depends on the previous behaviour, we have added an options object that will modify behaviour:
+             *   - if `(n == true || n < 2)`, `*.getNetworklist({numLevels: n})` will return data as before, split in 5 levels;
+             *   - if `(n > 1)`, `*.getNetworklist({numLevels: n})` will calculate the signal level, split in n levels;
+             *   - if `(n == false)`, `*.getNetworklist({numLevels: n})` will use the raw signal level;
+             */
+
+            int level;
+
+            if (numLevels == null) {
+              level = scan.level;
+            } else {
+              level = wifiManager.calculateSignalLevel(scan.level, numLevels);
+            }
+
+            JSONObject lvl = new JSONObject();
+            try {
+                lvl.put("level", level);
+                lvl.put("SSID", scan.SSID);
+                lvl.put("BSSID", scan.BSSID);
+                lvl.put("frequency", scan.frequency);
+                lvl.put("capabilities", scan.capabilities);
+               // lvl.put("timestamp", scan.timestamp);
+                returnList.put(lvl);
+            } catch (JSONException e) {
+                e.printStackTrace();
+                callbackContext.error(e.toString());
+                return false;
+            }
+        }
+
+        callbackContext.success(returnList);
+        return true;
+    }
+	
+	//Code cobtained from WiFiWizard by hoerresb
+    private boolean validateData(JSONArray data) {
+        try {
+            if (data == null || data.get(0) == null) {
+                callbackContext.error("Data is null.");
+                return false;
+            }
+            return true;
+        }
+        catch (Exception e) {
+            callbackContext.error(e.getMessage());
+        }
+        return false;
     }
 
     //listener to get result

@@ -1,6 +1,8 @@
 # cordova-plugin-smartconfig
 
-A cordova plugin for Expressif Esptouch protocol which is used to smartconfig esp8266 & ESP32
+A cordova plugin for Expressif Esptouch protocol which is used to smartconfig esp8266 & ESP32.
+It's a modified version of original code at https://github.com/xumingxin7398/cordovaEsptouch
+
 # Install
 
 cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
