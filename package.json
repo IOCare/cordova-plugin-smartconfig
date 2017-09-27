@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-esptouch",
-  "version": "0.2.0",
-  "description": "Simple plugin to get Esptouch",
+  "name": "cordova-plugin-smartconfig",
+  "version": "1.0.1",
+  "description": "Cordova Cordova Smart Config plugin for esp8266 & ESP32",
   "cordova": {
-    "id": "com.icubespace.cordova_esptouch",
+    "id": "com.iocare.smartconfig",
     "platforms": [
       "android",
       "ios"
@@ -11,9 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xumingxin7398/cordovaEsptouch.git"
+    "url": "https://github.com/IOCare/cordova-plugin-smartconfig.git"
   },
   "keywords": [
+    "phonegap",
+    "network",
+    "wifi",
+    "esptouch",
+    "smartconfig"
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
@@ -27,7 +32,7 @@
   "author": "Rajendra Khope",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xumingxin7398/cordovaEsptouch/issues"
+    "url": "https://github.com/IOCare/cordova-plugin-smartconfig/issues"
   },
-  "homepage": "https://github.com/xumingxin7398/cordovaEsptouch#readme"
+  "homepage": "https://github.com/IOCare/cordova-plugin-smartconfig#readme"
 }
