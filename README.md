@@ -39,5 +39,4 @@ cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
 You must call "espSmartconfig.stopConfig" when you want to stop the config,if not it will make some mistake when you call
 "esptouchPlugin.smartConfig" the other time.
 
-
 iOS emulator does not support the SmartConfig feature.
