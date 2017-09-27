@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-smartconfig"
+      version="1.0.1">
+    <name>Cordova Smart Config</name>
+    <description>cordova Cordova Smart Config plugin for esp8266 & ESP32</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,console</keywords>
+    <repo>https://github.com/IOCare/cordova-plugin-smartconfig.git</repo>
+    <issue>https://github.com/IOCare/cordova-plugin-smartconfig/issues</issue>
+
+    <js-module name="espSmartconfig" src="www/espSmartconfig.js">
+        <clobbers target="espSmartconfig"/>
+    </js-module>
+<!-- 	android platform -->
+    <platform name="android">
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+		</config-file>
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="espSmartconfig">
+                <param name="android-package" value="com.iocare.smartconfig.espSmartconfig"/>
+            </feature>
+        </config-file>
+		<source-file src="src/android/espSmartconfig.java" target-dir="src/com/iocare/smartconfig/" />
+        <!-- <source-file src="src/android/esptouch.jar" target-dir="libs/" /> -->
+        <source-file src="src/android/com/espressif" target-dir="src/com"/>
+    </platform>
+<!-- 	ios platform -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="espSmartconfig">
+			 <param name="ios-package" value="espSmartconfig"/>
+		   </feature>
+	   </config-file>
+	   <header-file src="src/ios/espSmartconfig.h"/>
+       <source-file src="src/ios/espSmartconfig.m"/>
+	   
+	   <framework src="CoreGraphics.framework" />
+	   <framework src="UIKit.framework" />
+	   <framework src="Foundation.framework" />
+	   <framework src="src/ios/Esptouch.framework" custom="true" framework="true"/>
+	</platform>
+</plugin>

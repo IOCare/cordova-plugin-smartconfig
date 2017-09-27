@@ -3,7 +3,7 @@ A cordova plugin for Expressif Esptouch protocol which is used to smartconfig es
 # Install
 cordova plugin add https://github.com/IOCare/cordova-plugin-smartconfig.git
 
-# usage
+# Usage
 1. espSmartconfig.startConfig 
 
 ```

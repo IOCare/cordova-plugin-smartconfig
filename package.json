@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-esptouch",
+  "version": "0.2.0",
+  "description": "Simple plugin to get Esptouch",
+  "cordova": {
+    "id": "com.icubespace.cordova_esptouch",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xumingxin7398/cordovaEsptouch.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.4.0"
+    }
+  ],
+  "author": "Rajendra Khope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xumingxin7398/cordovaEsptouch/issues"
+  },
+  "homepage": "https://github.com/xumingxin7398/cordovaEsptouch#readme"
+}
