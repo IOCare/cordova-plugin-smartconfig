@@ -37,6 +37,7 @@ public class espSmartconfig extends CordovaPlugin {
 	private WifiManager wifiManager;
 	CallbackContext receivingCallbackContext = null;
 	IEsptouchTask mEsptouchTask;
+	private static final String TAG = "espSmartconfig";
 
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -112,7 +113,7 @@ public class espSmartconfig extends CordovaPlugin {
             return true;
         }
         else if (action.equals("getNetworklist")) {
-			return this.getScanResults(callbackContext, args);
+			return this.getNetworklist(callbackContext, args);
         }
         else{
             callbackContext.error("can not find the function "+action);
@@ -205,13 +206,13 @@ public class espSmartconfig extends CordovaPlugin {
     private boolean validateData(JSONArray data) {
         try {
             if (data == null || data.get(0) == null) {
-                callbackContext.error("Data is null.");
+                receivingCallbackContext.error("Data is null.");
                 return false;
             }
             return true;
         }
         catch (Exception e) {
-            callbackContext.error(e.getMessage());
+            receivingCallbackContext.error(e.getMessage());
         }
         return false;
     }

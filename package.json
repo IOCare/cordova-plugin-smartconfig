@@ -18,7 +18,7 @@
     "network",
     "wifi",
     "esptouch",
-    "smartconfig"
+    "smartconfig",
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
