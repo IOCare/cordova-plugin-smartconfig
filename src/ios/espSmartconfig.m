@@ -22,7 +22,7 @@
 
 @implementation espSmartconfig
 
-- (void) smartConfig:(CDVInvokedUrlCommand *)command{
+- (void) startConfig:(CDVInvokedUrlCommand *)command{
     [self._condition lock];
     NSString *apSsid = (NSString *)[command.arguments objectAtIndex:0];
     NSString *apBssid = (NSString *)[command.arguments objectAtIndex:1];
@@ -98,7 +98,7 @@
 }
 
 
-- (void) cancelConfig:(CDVInvokedUrlCommand *)command{
+- (void) stopConfig:(CDVInvokedUrlCommand *)command{
     [self._condition lock];
     if (self._esptouchTask != nil)
     {
