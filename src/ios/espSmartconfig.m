@@ -84,9 +84,13 @@
                         
                         ESPTouchResult *resultInArray = [esptouchResultArray objectAtIndex:0];
                         NSString *ipaddr = [ESP_NetUtil descriptionInetAddr4ByData:resultInArray.ipAddrData];
-                        NSDictionary* returnObj = @{@"ipaddr": ipaddr};
+                        // device0 I think is suppose to be the index
+                        NSString *result = [NSString stringWithFormat:@"Finished: device0,bssid=%@,InetAddress=%@.", resultInArray.bssid, ipaddr];
+                        
+                        //                        NSDictionary* returnObj = @{@"ipaddr": ipaddr};
                         CDVPluginResult* pluginResult = nil;
-                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:returnObj];
+                        //                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:returnObj];
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
                         
                         [pluginResult setKeepCallbackAsBool:true];
                         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
@@ -121,3 +125,4 @@
 }
 
 @end
+
