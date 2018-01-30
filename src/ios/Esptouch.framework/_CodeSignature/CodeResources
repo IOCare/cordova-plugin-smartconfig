@@ -4,29 +4,9 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		VIPr2CM361X/IZclh+jCOzhjzEw=
-		</data>
-		<key>Headers/ESPDataCode.h</key>
-		<data>
-		uvIQZxuR7gqp/QCkTwxrqoDk1kI=
-		</data>
-		<key>Headers/ESPDatumCode.h</key>
-		<data>
-		TsbjlkUeCWpuATTj2hla6YYDOyU=
-		</data>
-		<key>Headers/ESPGuideCode.h</key>
-		<data>
-		a75+f57T75ozF3a2Gulhn8acCkg=
-		</data>
 		<key>Headers/ESPTouchDelegate.h</key>
 		<data>
 		RPEhrjGf7K2YMBXxa+H4v0jWwAA=
-		</data>
-		<key>Headers/ESPTouchGenerator.h</key>
-		<data>
-		OtRLrHKBqUmhPCmPI+PhRabBtWI=
 		</data>
 		<key>Headers/ESPTouchResult.h</key>
 		<data>
@@ -34,43 +14,19 @@
 		</data>
 		<key>Headers/ESPTouchTask.h</key>
 		<data>
-		Jn/T3S3m7cB/zM4/Rf+2739rQ9M=
-		</data>
-		<key>Headers/ESPTouchTaskParameter.h</key>
-		<data>
-		ailyNkvPun+WEybcmstJXgHtVTk=
-		</data>
-		<key>Headers/ESPUDPSocketClient.h</key>
-		<data>
-		QQtHsP5gmFAYr2OO/VvYz7oVfM4=
-		</data>
-		<key>Headers/ESPUDPSocketServer.h</key>
-		<data>
-		kuJVbzuxvSgN2ViyrNA8xetnsPU=
-		</data>
-		<key>Headers/ESP_ByteUtil.h</key>
-		<data>
-		aBPEGTalwJD+9RqCA2H2xnyB1jk=
-		</data>
-		<key>Headers/ESP_CRC8.h</key>
-		<data>
-		4kHASJQXV3JQ27M7WzJOW7vVGv4=
+		NEVRy/Yekoh7ZYbBfKME4jNx0E4=
 		</data>
 		<key>Headers/ESP_NetUtil.h</key>
 		<data>
-		B+xI4q/dGKhfrO4QHKrBCHI4qVc=
+		qcrXW+LAn3dYL25dw+2ijn7oc5I=
 		</data>
-		<key>Headers/Esptouch.h</key>
+		<key>Headers/EspTouch.h</key>
 		<data>
-		n0xVq/Sz1MvTamDwU8xnBffmfKk=
-		</data>
-		<key>Headers/IPAddress.h</key>
-		<data>
-		X2RjPlpESS1D+9DzT4EESb54p5o=
+		c56f7ZJkzbut+c3mdlOTVP/Fk+s=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Rx9gHlhbdLzkWjWpxzCXFcTRY1s=
+		TTmXrFKOOnR/WvSWuBCefnlewcM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -79,70 +35,72 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Headers/ESPDataCode.h</key>
-		<data>
-		uvIQZxuR7gqp/QCkTwxrqoDk1kI=
-		</data>
-		<key>Headers/ESPDatumCode.h</key>
-		<data>
-		TsbjlkUeCWpuATTj2hla6YYDOyU=
-		</data>
-		<key>Headers/ESPGuideCode.h</key>
-		<data>
-		a75+f57T75ozF3a2Gulhn8acCkg=
-		</data>
 		<key>Headers/ESPTouchDelegate.h</key>
-		<data>
-		RPEhrjGf7K2YMBXxa+H4v0jWwAA=
-		</data>
-		<key>Headers/ESPTouchGenerator.h</key>
-		<data>
-		OtRLrHKBqUmhPCmPI+PhRabBtWI=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			RPEhrjGf7K2YMBXxa+H4v0jWwAA=
+			</data>
+			<key>hash2</key>
+			<data>
+			Lfj3Gc2dOwQRFQh/Tjd188iUgEUU7lC+5qdi/Ek1iBU=
+			</data>
+		</dict>
 		<key>Headers/ESPTouchResult.h</key>
-		<data>
-		PmHWG/InCj3+ws8sRbLr9HDd7lw=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			PmHWG/InCj3+ws8sRbLr9HDd7lw=
+			</data>
+			<key>hash2</key>
+			<data>
+			AzT6ymeeNb8ZJi2KwuNpdw807l49yB2ImFT5HGf+MCM=
+			</data>
+		</dict>
 		<key>Headers/ESPTouchTask.h</key>
-		<data>
-		Jn/T3S3m7cB/zM4/Rf+2739rQ9M=
-		</data>
-		<key>Headers/ESPTouchTaskParameter.h</key>
-		<data>
-		ailyNkvPun+WEybcmstJXgHtVTk=
-		</data>
-		<key>Headers/ESPUDPSocketClient.h</key>
-		<data>
-		QQtHsP5gmFAYr2OO/VvYz7oVfM4=
-		</data>
-		<key>Headers/ESPUDPSocketServer.h</key>
-		<data>
-		kuJVbzuxvSgN2ViyrNA8xetnsPU=
-		</data>
-		<key>Headers/ESP_ByteUtil.h</key>
-		<data>
-		aBPEGTalwJD+9RqCA2H2xnyB1jk=
-		</data>
-		<key>Headers/ESP_CRC8.h</key>
-		<data>
-		4kHASJQXV3JQ27M7WzJOW7vVGv4=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			NEVRy/Yekoh7ZYbBfKME4jNx0E4=
+			</data>
+			<key>hash2</key>
+			<data>
+			OB4KF3h+SmLP8KLjinQ79qb+jc2GyC+Uj7paHazauis=
+			</data>
+		</dict>
 		<key>Headers/ESP_NetUtil.h</key>
-		<data>
-		B+xI4q/dGKhfrO4QHKrBCHI4qVc=
-		</data>
-		<key>Headers/Esptouch.h</key>
-		<data>
-		n0xVq/Sz1MvTamDwU8xnBffmfKk=
-		</data>
-		<key>Headers/IPAddress.h</key>
-		<data>
-		X2RjPlpESS1D+9DzT4EESb54p5o=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			qcrXW+LAn3dYL25dw+2ijn7oc5I=
+			</data>
+			<key>hash2</key>
+			<data>
+			q3TrTsXXwXYUlkeoeUqnKbIDk5c/wRC4eHT0kbe3adc=
+			</data>
+		</dict>
+		<key>Headers/EspTouch.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			c56f7ZJkzbut+c3mdlOTVP/Fk+s=
+			</data>
+			<key>hash2</key>
+			<data>
+			olw1ECZ/Vk9K67PbSFLGPffrw7F7z9rlQoFkdP/SMgA=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
-		<data>
-		mCvJocP1VSbHhDd9AFVIB7nr6d8=
-		</data>
+		<dict>
+			<key>hash</key>
+			<data>
+			mCvJocP1VSbHhDd9AFVIB7nr6d8=
+			</data>
+			<key>hash2</key>
+			<data>
+			hUfKc5ON7gWbmApMLOxTO61E947j4RtYI+Eza3ax2pw=
+			</data>
+		</dict>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -161,6 +119,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -206,6 +169,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^Info\.plist$</key>
 		<dict>

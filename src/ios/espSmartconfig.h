@@ -11,8 +11,8 @@
 @property (nonatomic, strong) NSCondition *_condition;
 @property (atomic, strong) ESPTouchTask *_esptouchTask;
 
-- (void)smartConfig:(CDVInvokedUrlCommand*)command;
+- (void)startConfig:(CDVInvokedUrlCommand*)command;
 
-- (void)cancelConfig:(CDVInvokedUrlCommand*)command;
+- (void)stopConfig:(CDVInvokedUrlCommand*)command;
 
 @end
