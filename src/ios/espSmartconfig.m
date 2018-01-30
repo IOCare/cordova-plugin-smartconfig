@@ -39,8 +39,10 @@
         int taskCount = [[command.arguments objectAtIndex:4] intValue];
         
         NSLog(@"ssid: %@, bssid: %@, apPwd: %@", apSsid, apBssid, apPwd);
+        //        self._esptouchTask =
+        //        [[ESPTouchTask alloc]initWithApSsid:apSsid andApBssid:apBssid andApPwd:apPwd andIsSsidHiden:isSsidHidden]; // deprecated
         self._esptouchTask =
-        [[ESPTouchTask alloc]initWithApSsid:apSsid andApBssid:apBssid andApPwd:apPwd andIsSsidHiden:isSsidHidden];
+        [[ESPTouchTask alloc]initWithApSsid:apSsid andApBssid:apBssid andApPwd:apPwd];
         EspTouchDelegateImpl *esptouchDelegate=[[EspTouchDelegateImpl alloc]init];
         esptouchDelegate.command=command;
         esptouchDelegate.commandDelegate=self.commandDelegate;
