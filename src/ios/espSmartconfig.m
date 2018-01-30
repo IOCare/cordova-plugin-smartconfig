@@ -36,7 +36,7 @@
         if([isSsidHiddenStr compare:@"NO"]==NSOrderedSame){
             isSsidHidden=false;
         }
-        int taskCount = (int)[command.arguments objectAtIndex:4];
+        int taskCount = [[command.arguments objectAtIndex:4] intValue];
         
         NSLog(@"ssid: %@, bssid: %@, apPwd: %@", apSsid, apBssid, apPwd);
         self._esptouchTask =
