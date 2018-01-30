@@ -75,5 +75,3 @@ if (n == false), *.getNetworklist({numLevels: n}) will use the raw signal level;
 #Warning 
 
 You must call "espSmartconfig.stopConfig" when you want to stop the config,if not "espSmartconfig.startConfig" won't work if called next time.
-
-Not tested with iOS. 
