@@ -14,5 +14,6 @@
 - (void)startConfig:(CDVInvokedUrlCommand*)command;
 
 - (void)stopConfig:(CDVInvokedUrlCommand*)command;
+- (void)getNetworklist:(CDVInvokedUrlCommand*)command;
 
 @end
