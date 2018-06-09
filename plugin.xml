@@ -30,7 +30,7 @@
         </config-file>
 		<source-file src="src/android/espSmartconfig.java" target-dir="src/com/iocare/smartconfig/" />
         <!-- <source-file src="src/android/esptouch.jar" target-dir="libs/" /> -->
-        <source-file src="src/android/com/espressif" target-dir="src/com"/>
+        <source-file src="src/android/com/espressif" target-dir="app/src/main/java/com"/>
     </platform>
 <!-- 	ios platform -->
 	<platform name="ios">
