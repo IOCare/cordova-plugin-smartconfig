@@ -1,7 +1,7 @@
 {
   "name": "cordova-plugin-smartconfig",
   "version": "1.0.1",
-  "description": "Cordova Cordova Smart Config plugin for esp8266 & ESP32",
+  "description": "Cordova Cordova Smart Config plugin for esp8266 and ESP32",
   "cordova": {
     "id": "com.iocare.smartconfig",
     "platforms": [

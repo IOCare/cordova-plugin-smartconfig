@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="cordova-plugin-smartconfig"
-      version="1.0.1">
+      version="1.0.4">
     <name>Cordova Smart Config</name>
     <description>Cordova Cordova Smart Config plugin for esp8266 and ESP32</description>
     <license>Apache 2.0</license>
